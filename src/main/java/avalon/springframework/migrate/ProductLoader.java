@@ -7,32 +7,32 @@ import org.springframework.context.ApplicationListener;
 import org.springframework.context.event.ContextRefreshedEvent;
 import org.springframework.stereotype.Component;
 
-import avalon.springframework.domain.Product;
-import avalon.springframework.repositories.ProductRepository;
+import avalon.springframework.model.TodoList;
+import avalon.springframework.repositories.TodoListRepository;
 
 import java.math.BigDecimal;
 
 @Component
 public class ProductLoader implements ApplicationListener<ContextRefreshedEvent> {
 
-  private ProductRepository productRepository;
+  private TodoListRepository productRepository;
 
   private Logger log = LogManager.getLogger(ProductLoader.class);
 
   @Autowired
-  public void setProductRepository(ProductRepository productRepository) {
+  public void setProductRepository(TodoListRepository productRepository) {
     this.productRepository = productRepository;
   }
 
   @Override
   public void onApplicationEvent(ContextRefreshedEvent event) {
 
-    Product one = new Product();
+    TodoList one = new TodoList();
     one.setTodo("Minimal running dlu deh ini");
     productRepository.save(one);
     log.info("Saved todo - id: " + one.getId());
 
-    Product two = new Product();
+    TodoList two = new TodoList();
     two.setTodo("Lalu buat todo listnya");
     productRepository.save(two);
     log.info("Saved two - id:" + two.getId());

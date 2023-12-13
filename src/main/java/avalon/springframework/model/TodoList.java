@@ -1,9 +1,9 @@
-package avalon.springframework.domain;
+package avalon.springframework.model;
 
 import javax.persistence.*;
 
 @Entity
-public class Product {
+public class TodoList {
   @Id
   @GeneratedValue(strategy = GenerationType.AUTO)
   private Integer id;
