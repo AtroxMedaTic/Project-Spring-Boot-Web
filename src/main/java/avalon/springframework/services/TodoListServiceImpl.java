@@ -8,25 +8,25 @@ import avalon.springframework.repositories.TodoListRepository;
 
 @Service
 public class TodoListServiceImpl implements TodoListService {
-  private TodoListRepository productRepository;
+  private TodoListRepository todoListRepository;
 
   @Autowired
-  public void setProductRepository(TodoListRepository productRepository) {
-    this.productRepository = productRepository;
+  public void setProductRepository(TodoListRepository todoListRepository) {
+    this.todoListRepository = todoListRepository;
   }
 
   @Override
   public Iterable<TodoList> listAllProducts() {
-    return productRepository.findAll();
+    return todoListRepository.findAll();
   }
 
   @Override
   public TodoList getProductById(Integer id) {
-    return productRepository.findById(id).orElse(null);
+    return todoListRepository.findById(id).orElse(null);
   }
 
   @Override
   public TodoList saveProduct(TodoList product) {
-    return productRepository.save(product);
+    return todoListRepository.save(product);
   }
 }

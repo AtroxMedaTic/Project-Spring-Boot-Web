@@ -10,18 +10,16 @@ import org.springframework.stereotype.Component;
 import avalon.springframework.model.TodoList;
 import avalon.springframework.repositories.TodoListRepository;
 
-import java.math.BigDecimal;
-
 @Component
 public class ProductLoader implements ApplicationListener<ContextRefreshedEvent> {
 
-  private TodoListRepository productRepository;
+  private TodoListRepository todoListRepository;
 
   private Logger log = LogManager.getLogger(ProductLoader.class);
 
   @Autowired
   public void setProductRepository(TodoListRepository productRepository) {
-    this.productRepository = productRepository;
+    this.todoListRepository = productRepository;
   }
 
   @Override
@@ -29,12 +27,12 @@ public class ProductLoader implements ApplicationListener<ContextRefreshedEvent>
 
     TodoList one = new TodoList();
     one.setTodo("Minimal running dlu deh ini");
-    productRepository.save(one);
+    todoListRepository.save(one);
     log.info("Saved todo - id: " + one.getId());
 
     TodoList two = new TodoList();
     two.setTodo("Lalu buat todo listnya");
-    productRepository.save(two);
+    todoListRepository.save(two);
     log.info("Saved two - id:" + two.getId());
   }
 }

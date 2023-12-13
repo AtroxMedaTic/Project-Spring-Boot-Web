@@ -12,16 +12,16 @@ import org.springframework.web.bind.annotation.RequestMethod;
 @Controller
 public class TodoListController {
 
-  private TodoListService productService;
+  private TodoListService todoListService;
 
   @Autowired
-  public void setProductService(TodoListService productService) {
-    this.productService = productService;
+  public void setProductService(TodoListService todoListService) {
+    this.todoListService = todoListService;
   }
 
   @RequestMapping(value = "/list", method = RequestMethod.GET)
   public String list(Model model) {
-    model.addAttribute("todos", productService.listAllProducts());
+    model.addAttribute("todos", todoListService.listAllProducts());
     model.addAttribute("todoRequest", new TodoList());
     System.out.println("Returning todo:");
     return "todolist";
@@ -29,13 +29,13 @@ public class TodoListController {
 
   @RequestMapping("product/{id}")
   public String showProduct(@PathVariable Integer id, Model model) {
-    model.addAttribute("product", productService.getProductById(id));
+    model.addAttribute("product", todoListService.getProductById(id));
     return "productshow";
   }
 
   @RequestMapping("product/edit/{id}")
   public String edit(@PathVariable Integer id, Model model) {
-    model.addAttribute("product", productService.getProductById(id));
+    model.addAttribute("product", todoListService.getProductById(id));
     return "productform";
   }
 
@@ -48,7 +48,7 @@ public class TodoListController {
   @RequestMapping(value = "list", method = RequestMethod.POST)
   public String saveProduct(TodoList product) {
 
-    productService.saveProduct(product);
+    todoListService.saveProduct(product);
     System.out.println("Returning todo :" + product.getTodo());
 
     return "redirect:/list";
