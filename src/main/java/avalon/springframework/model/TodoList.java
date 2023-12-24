@@ -6,8 +6,8 @@ import javax.persistence.*;
 public class TodoList {
   @Id
   @GeneratedValue(strategy = GenerationType.AUTO)
-  private Integer id;
 
+  private Integer id;
   private String todo;
 
   public Integer getId() {

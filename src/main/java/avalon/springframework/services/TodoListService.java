@@ -3,9 +3,11 @@ package avalon.springframework.services;
 import avalon.springframework.model.TodoList;
 
 public interface TodoListService {
-  Iterable<TodoList> listAllProducts();
+  Iterable<TodoList> getAllTodoList();
 
-  TodoList getProductById(Integer id);
+  TodoList getTodoListbyId(Integer id);
 
-  TodoList saveProduct(TodoList product);
+  TodoList saveTodoList(TodoList product);
+
+  TodoList deleteTodoList(Integer id);
 }

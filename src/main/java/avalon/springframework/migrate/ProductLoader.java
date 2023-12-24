@@ -26,13 +26,18 @@ public class ProductLoader implements ApplicationListener<ContextRefreshedEvent>
   public void onApplicationEvent(ContextRefreshedEvent event) {
 
     TodoList one = new TodoList();
-    one.setTodo("Minimal running dlu deh ini");
+    one.setTodo("Kerjakan tugas pbo");
     todoListRepository.save(one);
     log.info("Saved todo - id: " + one.getId());
 
     TodoList two = new TodoList();
-    two.setTodo("Lalu buat todo listnya");
+    two.setTodo("Prensentasi pbo");
     todoListRepository.save(two);
-    log.info("Saved two - id:" + two.getId());
+    log.info("Saved todo - id:" + two.getId());
+
+    TodoList three = new TodoList();
+    three.setTodo("hapus bagian ini jika sudah selesai prensentasi");
+    todoListRepository.save(three);
+    log.info("Saved todo - id:" + three.getId());
   }
 }

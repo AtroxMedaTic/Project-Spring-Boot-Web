@@ -16,17 +16,24 @@ public class TodoListServiceImpl implements TodoListService {
   }
 
   @Override
-  public Iterable<TodoList> listAllProducts() {
+  public Iterable<TodoList> getAllTodoList() {
     return todoListRepository.findAll();
   }
 
   @Override
-  public TodoList getProductById(Integer id) {
+  public TodoList getTodoListbyId(Integer id) {
     return todoListRepository.findById(id).orElse(null);
   }
 
   @Override
-  public TodoList saveProduct(TodoList product) {
+  public TodoList saveTodoList(TodoList product) {
     return todoListRepository.save(product);
+  }
+
+  @Override
+  public TodoList deleteTodoList(Integer id) {
+    TodoList todoList = todoListRepository.findById(id).orElse(null);
+    todoListRepository.deleteById(id);
+    return todoList;
   }
 }
