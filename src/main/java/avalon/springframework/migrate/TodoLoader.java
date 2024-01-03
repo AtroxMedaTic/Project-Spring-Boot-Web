@@ -11,11 +11,11 @@ import avalon.springframework.model.TodoList;
 import avalon.springframework.repositories.TodoListRepository;
 
 @Component
-public class ProductLoader implements ApplicationListener<ContextRefreshedEvent> {
+public class TodoLoader implements ApplicationListener<ContextRefreshedEvent> {
 
   private TodoListRepository todoListRepository;
 
-  private Logger log = LogManager.getLogger(ProductLoader.class);
+  private Logger log = LogManager.getLogger(TodoLoader.class);
 
   @Autowired
   public void setProductRepository(TodoListRepository productRepository) {
@@ -33,11 +33,11 @@ public class ProductLoader implements ApplicationListener<ContextRefreshedEvent>
     TodoList two = new TodoList();
     two.setTodo("Prensentasi pbo");
     todoListRepository.save(two);
-    log.info("Saved todo - id:" + two.getId());
+    log.info("Saved todo - id: " + two.getId());
 
     TodoList three = new TodoList();
     three.setTodo("Kumpulkan laporan pbo");
     todoListRepository.save(three);
-    log.info("Saved todo - id:" + three.getId());
+    log.info("Saved todo - id: " + three.getId());
   }
 }
