@@ -36,7 +36,7 @@ public class ProductLoader implements ApplicationListener<ContextRefreshedEvent>
     log.info("Saved todo - id:" + two.getId());
 
     TodoList three = new TodoList();
-    three.setTodo("hapus bagian ini jika sudah selesai prensentasi");
+    three.setTodo("Kumpulkan laporan pbo");
     todoListRepository.save(three);
     log.info("Saved todo - id:" + three.getId());
   }
