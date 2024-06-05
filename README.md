@@ -5,7 +5,7 @@ Ini adlaah aplikasi todo list yang dibuat dengan menggunakan spring boot java, a
 Dengan anggota kelompok:
 
 1. 4522210082 - [Daffa Fathan](https://github.com/daffa09)
-2. 4522210109 - [Antonius Valentino](https://github.com/BrohKane)
+2. 4522210109 - [Antonius Valentino](https://github.com/AtroxMedaTic)
 3. 4522210095 - [Tegar Gemilang](https://github.com/TegarGemilang02)
 4. 4522210112 - [Naufal Rizky](https://github.com/TruePal09)
 
